@@ -25,7 +25,7 @@ interface WordDao {
     @Insert
     fun insert(word: Word)
 
-    // @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
 
     @Query("DELETE FROM word_table")
     fun deleteAll()

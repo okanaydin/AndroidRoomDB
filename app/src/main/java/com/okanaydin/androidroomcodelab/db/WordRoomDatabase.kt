@@ -17,11 +17,11 @@ import kotlinx.coroutines.launch
 │ ─────────────────────────── │
 │ okan.aydin@isik.edu.tr      │
 │ ─────────────────────────── │
-│ 2019-04-21 - 21:12          │
+│ 2019-04-20 - 21:12          │
 └─────────────────────────────┘
  */
 
-@Database(entities = [Word::class], version = 1)
+@Database(entities = [Word::class], version = 2)
 abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
@@ -66,9 +66,9 @@ abstract class WordRoomDatabase : RoomDatabase() {
         fun populateDatabase(wordDao: WordDao) {
             wordDao.deleteAll()
 
-            var word = Word("Hello")
+            var word = Word(word="Hello")
             wordDao.insert(word)
-            word = Word("World!")
+            word = Word(word="World!")
             wordDao.insert(word)
         }
     }

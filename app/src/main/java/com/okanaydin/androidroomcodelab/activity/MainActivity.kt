@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.let {
-                val word = Word(it.getStringExtra(NewWordActivity.EXTRA_REPLY))
+                val word = Word(word = it.getStringExtra(NewWordActivity.EXTRA_REPLY))
                 wordViewModel.insert(word)
             }
         } else {
